@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/ianfletcher314/TekTalk/issues"
   },
-  "homepage": "https://github.com/ianfletcher314/TekTalk#readme"
+  "homepage": "https://github.com/ianfletcher314/TekTalk#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "sequelize": "^6.6.2"
+  }
 }
