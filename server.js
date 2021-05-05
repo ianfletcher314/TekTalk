@@ -11,6 +11,10 @@ const helpers = require('./utils/helpers');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+// sets up handlebars
+app.engine('handlebars', exphbs());
+app.set('view engine', 'handlebars')
+
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
