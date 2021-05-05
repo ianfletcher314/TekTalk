@@ -28,6 +28,10 @@ app.get('/comment', (req,res) => {
 
   res.render('comment')
 })
+app.get('/newpost', (req,res) => {
+
+  res.render('newpost')
+})
 
 
 sequelize.sync({ force: false }).then(() => {
