@@ -15,6 +15,12 @@ const PORT = process.env.PORT || 3001;
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars')
 
+// routing for handlebars 
+app.get('/', (req,res) => {
+
+  res.render('index')
+})
+
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
