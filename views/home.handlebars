@@ -1,40 +1,43 @@
- <!-- this is the template for Home Page  -->
-        <div id="flow-text" class="center ">
-            <div id="flow-text" class="center card-panel">
-                <h5 id="flow-text" class="white-text center card-panel pink lighten-4">
-                    Posts
-                </h5>
-                <div class="center card-panel">
-                    <div class="center card-panel pink lighten-5">
-                        <a id="dashboardPostName" class="waves-effect waves-teal btn-flat grey darken white-text">
-                            Post Name 6/6/06
-                        </a>
-                    </div>
-        
-                </div>
-                {{#each post as |post|}}
-               {{post_text}}
-               {{/each}}
+<!-- this is the template for Home Page  -->
+<div id="flow-text" class="center ">
+    <div id="flow-text" class="center card-panel">
+        <h5 id="flow-text" class="white-text center card-panel pink lighten-4">
+            Posts
+        </h5>
 
+        {{#each post as |post|}}
+        {{>singlepost}}
+        {{/each}}
 
-                
-        
-        
+    </div>
+    <div id="flow-text" class="center card-panel">
+        <h5 id="flow-text" class="white-text center card-panel purple lighten-4">
+            Comments
+        </h5>
+        <div class="center card-panel">
+            <div class="center card-panel purple lighten-5">
+                <a id="dashboardPostName" class="waves-effect waves-teal btn-flat grey darken white-text">
+                    i love this hahah - User on 6/6/06
+                </a>
             </div>
-            <div id="flow-text" class="center card-panel">
-                <h5 id="flow-text" class="white-text center card-panel purple lighten-4">
-                    Comments
-                </h5>
-                <div class="center card-panel">
-                    <div class="center card-panel purple lighten-5">
-                        <a id="dashboardPostName" class="waves-effect waves-teal btn-flat grey darken white-text">
-                            i love this hahah - User on 6/6/06
-                        </a>
-                    </div>
-        
-                </div>
-        
-        
-            </div>
-        
+
         </div>
+
+
+    </div>
+    {{!-- once comment rout is set up in home-routs.js this will generate the section --}}
+    {{!-- <div id="flow-text" class="center card-panel">
+        <h5 id="flow-text" class="white-text center card-panel purple lighten-4">
+            Comments
+        </h5>
+    
+        {{!-- needs home-routs to have comment get too --}}
+        {{#each comment as |comment|}}
+        {{>singlecomment}}
+        {{/each}}
+    
+    
+    
+    </div> --}}
+
+</div>
