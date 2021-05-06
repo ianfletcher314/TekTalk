@@ -38,16 +38,29 @@ router.get('/', async (req,res) => {
             },
           ],
         });
-
-    
+        
         const post = dbPostData.map((post) =>
         post.get({ plain: true }),
-          
         );
         console.log(post)
+
+        const dbCommentData = await Comment.findAll({
+            include: [
+              {
+                model: Post,
+                attributes: ['id'],
+              },
+            ],
+          });
+          
+          const comment = dbCommentData.map((comment) =>
+          comment.get({ plain: true }),
+          );
+          console.log(comment)
     
         res.render('home', {
-             post
+             post,
+             comment
         //   loggedIn: req.session.loggedIn,
         });
       } catch (err) {
