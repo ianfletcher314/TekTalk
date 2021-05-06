@@ -18,7 +18,7 @@ app.set('view engine', 'handlebars')
 // routing for handlebars 
 app.get('/', (req,res) => {
 
-  res.render('login')
+  res.render('home')
 })
 app.get('/dashboard', (req,res) => {
 
@@ -31,6 +31,10 @@ app.get('/comment', (req,res) => {
 app.get('/newpost', (req,res) => {
 
   res.render('newpost')
+})
+app.get('/home', (req,res) => {
+
+  res.render('home')
 })
 
 
