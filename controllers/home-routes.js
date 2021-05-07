@@ -93,6 +93,35 @@ router.get('/signup', (req,res) => {
 
     res.render('signup')
 })
+router.get('/created', (req,res) => {
 
+    res.render('created')
+})
+
+router.post('/create-user', async (req, res) => {
+    console.log(req)
+    try {
+      const dbUserData = await User.create({
+        username: req.body.username,
+        email: req.body.email,
+        password: req.body.password,
+        
+      });
+      console.log(dbUserData)
+
+      if (dbUserData.ok) {
+          document.location.replace('/')
+      }
+  
+      req.session.save(() => {
+        req.session.loggedIn = true;
+  
+        res.status(200).json(dbUserData);
+      });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  });
 
 module.exports = router;
