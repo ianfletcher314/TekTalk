@@ -68,6 +68,7 @@ router.get('/', async (req,res) => {
         res.status(500).json(err);
       }
 })
+// router.get('/post/:id')
 router.get('/dashboard', (req,res) => {
 
   res.render('dashboard')
@@ -84,6 +85,10 @@ router.get('/home', (req,res) => {
 
   res.render('home')
 })
+router.get('/login', (req,res) => {
+
+    res.render('login')
+  })
 
 
 module.exports = router;
