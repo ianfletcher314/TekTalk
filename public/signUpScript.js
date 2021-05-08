@@ -20,7 +20,7 @@ if (username , email , password ){
             headers: { 'Content-Type': 'application/json' }
         })
         .then (
-            console.log("done")
+            document.location.replace('/')
         )
 
 
