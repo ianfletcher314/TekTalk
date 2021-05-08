@@ -1,32 +1,5 @@
 const router = require('express').Router();
 const { Post, User, Comment } = require('../models');
-// check 19 ins_middleware for get querries like this!!
-
-// GET all posts for homepage
-// router.get('/', async (req, res) => {
-//   try {
-//     const dbPostData = await Post.findAll({
-//       include: [
-//         {
-//           model: Post,
-//           attributes: ['id','post_title', 'post_text','user_id','created_at','updated_at'],
-//         },
-//       ],
-//     });
-
-//     const posts = dbPostData.map((post) =>
-//       post.get({ plain: true })
-//     );
-
-//     res.render('home', {
-//       posts,
-//     //   loggedIn: req.session.loggedIn,
-//     });
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }
-// });
 console.log("routerworking")
 router.get('/', async (req,res) => {
     try {
@@ -99,7 +72,7 @@ router.get('/created', (req,res) => {
 })
 
 router.post('/create-user', async (req, res) => {
-    console.log(req)
+    console.log("in router.post")
     try {
       const dbUserData = await User.create({
         username: req.body.username,
@@ -122,6 +95,7 @@ router.post('/create-user', async (req, res) => {
       console.log(err);
       res.status(500).json(err);
     }
-  });
+});
+
 
 module.exports = router;
