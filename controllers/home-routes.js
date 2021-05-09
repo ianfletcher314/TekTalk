@@ -15,7 +15,7 @@ router.get('/', async (req,res) => {
         const post = dbPostData.map((post) =>
         post.get({ plain: true }),
         );
-        console.log(post)
+        // console.log(post)
 
         const dbCommentData = await Comment.findAll({
             include: [
@@ -29,7 +29,7 @@ router.get('/', async (req,res) => {
           const comment = dbCommentData.map((comment) =>
           comment.get({ plain: true }),
           );
-          console.log(comment)
+          // console.log(comment)
     
         res.render('home', {
              post,
@@ -41,7 +41,28 @@ router.get('/', async (req,res) => {
         res.status(500).json(err);
       }
 })
-// router.get('/post/:id')
+router.get('/post/:id', async (req, res)=> {
+  console.log(req.params.id, "id")
+  try {
+    const postsData = await Post.findOne({ where: { id: req.params.id,   } 
+    });
+    // const commentData = await Comment.findAll({ where: { post_id: req.params.id,  } 
+    // });
+    // const comment = commentData.get({ plain: true });
+
+    const post = postsData.get({ plain: true });
+    
+    res.render('PostMain', {
+      ...post,
+      // ...comment // logged_in: req.session.logged_in 
+    })
+  } catch (err) {
+    res.status(500).json(err)
+    console.log("big ooops")
+  }
+  console.log(postsData)
+});
+
 router.get('/dashboard', (req,res) => {
 
   res.render('dashboard')
