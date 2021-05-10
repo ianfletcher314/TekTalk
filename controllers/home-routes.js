@@ -57,9 +57,10 @@ router.get('/post/:id', async (req, res)=> {
         }
       ]
     });
-    console.log(postsData)
+    
 
     const post = postsData.get({ plain: true });
+    console.log(post)
 
     res.render('PostMain', {
       ...post,

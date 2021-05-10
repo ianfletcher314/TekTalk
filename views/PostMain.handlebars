@@ -3,28 +3,56 @@
     <div id="flow-text" class="center card-panel">
         <h5 id="flow-text" class="white-text center card-panel pink lighten-4">
             {{post_title}}
-        </h5>
-        <p>
-            {{post_text}}
-        </p>
+            </h5>
+            <p>
+                {{post_text}}
+            </p>
+            <p>
+                by :{{User.username}}
+            </p>
 
-        <a id="updateBtn" href="/update/{{id}}" class="grey-text waves-effect waves-light btn light-blue lighten-4">Update</a>
+        {{!-- <a id="updateBtn" href="/update/{{id}}"
+            class="grey-text waves-effect waves-light btn light-blue lighten-4">Update</a> --}}
+        {{!-- <a id="commentBtn" href="/newcomment/{{id}}"
+            class="grey-text waves-effect waves-light btn  yellow lighten-4">Comment</a> --}}
+        {{!-- <a id="deleteBtn" href="/delete/{{id}}"
+            class="grey-text waves-effect waves-light btn  purple lighten-4">Delete</a>
 
-        <a id="deleteBtn" href="/delete/{{id}}" class="grey-text waves-effect waves-light btn  purple lighten-4">Delete</a>
-        <a id="deleteBtn" href="/newcomment/{{id}}" class="grey-text waves-effect waves-light btn  yellow lighten-4">Comment</a>
-        <a id="deleteBtn" href="/edit/post/{{id}}" class="grey-text waves-effect waves-light btn  grey lighten-4">Edit</a>
+        <a id="editBtn" href="/edit/post/{{id}}" class="grey-text waves-effect waves-light btn  grey lighten-4">Edit</a>
+        --}}
     </div>
-    
+    <form class="col s12">
+
+        <div class="row">
+            <div class="active input-field col s12">
+                <textarea id="commentText" class="materialize-textarea" data-length="120"></textarea>
+                <label class="active" for="textarea2">Comment Text</label>
+        
+            </div>
+        </div>
+        <a id="newCmtSubmitBtn" class="waves-effect waves-teal btn-flat">
+            SUBMIT
+        </a>
+    </form>
+
     {{!-- once comment rout is set up in home-routs.js this will generate the section --}}
     <div id="flow-text" class="center card-panel">
         <h5 id="flow-text" class="white-text center card-panel purple lighten-4">
-           comments
+            comments
         </h5>
-    
+
         {{!-- needs home-routs to have comment get too --}}
-        <a class="flow-text grey-text " href="/comment/{{id}}">comment text :{{Comment.comment_text}}</a>
-        
-       
+        {{#each Comments as |comment|}}
+  
+                {{>singlecomment}}
+    
+        {{/each}}
+        <p>
+            {{User.username}}
+        </p>
+
+
     </div>
+
 
 </div>
