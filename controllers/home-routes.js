@@ -41,6 +41,7 @@ router.get('/', async (req,res) => {
         res.status(500).json(err);
       }
 })
+// route to view individual post
 router.get('/post/:id', async (req, res)=> {
   console.log(req.params.id, "id")
   try {
@@ -69,6 +70,7 @@ router.get('/post/:id', async (req, res)=> {
   }
   console.log(postsData)
 });
+// route to view single comment
 router.get('/comment/:id', async (req, res)=> {
   console.log(req.params.id, "id")
   try {
@@ -98,10 +100,25 @@ router.get('/dashboard', (req,res) => {
 
   res.render('dashboard')
 })
-router.get('/comment', (req,res) => {
+// route for submit new post button
+// router.put('/submit/post', (req,res) => {
 
-  res.render('comment')
-})
+//   res.render('PostMain', {
+//     ...post,
+//     // ...comment // logged_in: req.session.logged_in 
+//   })
+// })
+
+// route for submit new comment button
+// router.put('/submit/comment/:id', (req,res) => {
+
+//   res.render('CommentMain', {
+//     ...comment,
+//     // ...comment // logged_in: req.session.logged_in 
+//   })
+// })
+
+// routes to basic home pages
 router.get('/newpost', (req,res) => {
 
   res.render('newpost')
@@ -118,16 +135,16 @@ router.get('/signup', (req,res) => {
 
     res.render('signup')
 })
-router.get('/created', (req,res) => {
-
-    res.render('created')
-})
 router.get('/logout', (req,res) => {
 
   res.render('logout')
 })
+router.get('/created', (req,res) => {
 
+  res.render('created')
+})
 
+// route to create new user
 router.post('/create-user', async (req, res) => {
     console.log("in router.post")
     try {
