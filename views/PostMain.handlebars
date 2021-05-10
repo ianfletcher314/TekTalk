@@ -8,6 +8,10 @@
             {{post_text}}
         </p>
 
+        <a id="updateBtn" href="/update/{{id}}" class="grey-text waves-effect waves-light btn light-blue lighten-4">Update</a>
+
+        <a id="deleteBtn" href="/delete/{{id}}" class="grey-text waves-effect waves-light btn  purple lighten-4">Delete</a>
+
     </div>
     
     {{!-- once comment rout is set up in home-routs.js this will generate the section --}}
@@ -17,11 +21,8 @@
         </h5>
     
         {{!-- needs home-routs to have comment get too --}}
-        {{comment_text}}
+        comment text :{{Comment.comment_text}}
        
-    
-    
-    
     </div>
 
 </div>

@@ -44,14 +44,21 @@ router.get('/', async (req,res) => {
 router.get('/post/:id', async (req, res)=> {
   console.log(req.params.id, "id")
   try {
-    const postsData = await Post.findOne({ where: { id: req.params.id,   } 
+    const postsData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: User, 
+          attributes: ['username']
+        },
+        {
+          model: Comment,
+          attributes: ['comment_text']
+        }
+      ]
     });
-    // const commentData = await Comment.findAll({ where: { post_id: req.params.id,  } 
-    // });
-    // const comment = commentData.get({ plain: true });
 
     const post = postsData.get({ plain: true });
-    
+
     res.render('PostMain', {
       ...post,
       // ...comment // logged_in: req.session.logged_in 
@@ -91,6 +98,11 @@ router.get('/created', (req,res) => {
 
     res.render('created')
 })
+router.get('/logout', (req,res) => {
+
+  res.render('logout')
+})
+
 
 router.post('/create-user', async (req, res) => {
     console.log("in router.post")
