@@ -19,6 +19,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.engine('handlebars',hbs.engine ); //exphbs({defaultLayout: 'main'})
 app.set('view engine', 'handlebars')
 
+const sess = {
+  secret: "pingpong",
+  cookie: {maxAge:300000},
+  resave: false,
+  saveUnitialized: true,
+  store: new SequelizeStore({
+    db: sequelize
+  })
+}
+app.use(session(sess))
+
 // routing for handlebars 
 app.use(routes);
 
