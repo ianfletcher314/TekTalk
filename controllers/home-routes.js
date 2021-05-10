@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Post, User, Comment } = require('../models');
-console.log("routerworking")
+// console.log("routerworking")
 router.get('/', async (req,res) => {
     try {
         const dbPostData = await Post.findAll({
@@ -101,16 +101,16 @@ router.get('/dashboard', (req,res) => {
   res.render('dashboard')
 })
 // route for submit new post button
-router.put('/submit/post',async (req, res) => {
+router.post('/submit/post',async (req, res) => {
     console.log("in router.post")
     try {
       const dbUserData = await Post.create({
-        post_title: req.body.post_title,
-        post_text: req.body.post_text,
+        post_title: req.body.title,
+        post_text: req.body.text,
         user_id: req.body.user_id,
         
       });
-      console.log(dbUserData)
+      console.log(dbUserData,"this is dbUserData")
 
       if (dbUserData.ok) {
           document.location.replace('/')
