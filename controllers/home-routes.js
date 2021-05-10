@@ -101,13 +101,31 @@ router.get('/dashboard', (req,res) => {
   res.render('dashboard')
 })
 // route for submit new post button
-// router.put('/submit/post', (req,res) => {
+router.put('/submit/post',async (req, res) => {
+    console.log("in router.post")
+    try {
+      const dbUserData = await Post.create({
+        post_title: req.body.post_title,
+        post_text: req.body.post_text,
+        user_id: req.body.user_id,
+        
+      });
+      console.log(dbUserData)
 
-//   res.render('PostMain', {
-//     ...post,
-//     // ...comment // logged_in: req.session.logged_in 
-//   })
-// })
+      if (dbUserData.ok) {
+          document.location.replace('/')
+      }
+  
+      // req.session.save(() => {
+      //   req.session.loggedIn = true;
+  
+      //   res.status(200).json(dbUserData);
+      // });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+});
 
 // route for submit new comment button
 // router.put('/submit/comment/:id', (req,res) => {

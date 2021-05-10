@@ -12,7 +12,7 @@
 
         <a id="deleteBtn" href="/delete/{{id}}" class="grey-text waves-effect waves-light btn  purple lighten-4">Delete</a>
         <a id="deleteBtn" href="/submit/comment/{{id}}" class="grey-text waves-effect waves-light btn  yellow lighten-4">Comment</a>
-
+        <a id="deleteBtn" href="/edit/post/{{id}}" class="grey-text waves-effect waves-light btn  grey lighten-4">Edit</a>
     </div>
     
     {{!-- once comment rout is set up in home-routs.js this will generate the section --}}
@@ -22,7 +22,8 @@
         </h5>
     
         {{!-- needs home-routs to have comment get too --}}
-        comment text :{{Comment.comment_text}}
+        <a class="flow-text grey-text " href="/comment/{{id}}">comment text :{{Comment.comment_text}}</a>
+        
        
     </div>
 
