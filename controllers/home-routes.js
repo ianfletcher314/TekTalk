@@ -57,6 +57,7 @@ router.get('/post/:id', async (req, res)=> {
         }
       ]
     });
+    console.log(postsData)
 
     const post = postsData.get({ plain: true });
 
@@ -68,7 +69,7 @@ router.get('/post/:id', async (req, res)=> {
     res.status(500).json(err)
     console.log("big ooops")
   }
-  console.log(postsData)
+  
 });
 // route to view single comment
 router.get('/comment/:id', async (req, res)=> {
@@ -128,18 +129,39 @@ router.post('/submit/post',async (req, res) => {
 });
 
 // route for submit new comment button
-// router.put('/submit/comment/:id', (req,res) => {
+router.post('/submit/comment',async (req, res) => {
+  console.log("in router.post")
+  try {
+    const dbUserData = await Comment.create({
+      comment_text: req.body.text,
+      post_id: req.body.post_id,
+      
+    });
+    console.log(dbUserData,"this is dbUserData")
 
-//   res.render('CommentMain', {
-//     ...comment,
-//     // ...comment // logged_in: req.session.logged_in 
-//   })
-// })
+    if (dbUserData.ok) {
+        document.location.replace('/')
+    }
+
+    // req.session.save(() => {
+    //   req.session.loggedIn = true;
+
+    //   res.status(200).json(dbUserData);
+    // });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
 // routes to basic home pages
 router.get('/newpost', (req,res) => {
 
   res.render('newpost')
+})
+router.get('/newcomment/:id', (req,res) => {
+
+  res.render('newcomment')
 })
 router.get('/home', (req,res) => {
 

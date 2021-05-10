@@ -20,7 +20,7 @@ if (user_id , title , text ){
             headers: { 'Content-Type': 'application/json' }
         })
         .then (
-            // document.location.replace('/')
+            document.location.replace('/')
         )
 
 
