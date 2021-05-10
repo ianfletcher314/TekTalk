@@ -69,6 +69,30 @@ router.get('/post/:id', async (req, res)=> {
   }
   console.log(postsData)
 });
+router.get('/comment/:id', async (req, res)=> {
+  console.log(req.params.id, "id")
+  try {
+    const commentData = await Comment.findByPk(req.params.id, {
+      // include: [
+      //   {
+      //     model: User, 
+      //     attributes: ['username']
+      //   },
+      // ]
+    });
+
+    const comment = commentData.get({ plain: true });
+
+    res.render('CommentMain', {
+      ...comment,
+      // ...comment // logged_in: req.session.logged_in 
+    })
+  } catch (err) {
+    res.status(500).json(err)
+    console.log("big ooops")
+  }
+  console.log(postsData)
+});
 
 router.get('/dashboard', (req,res) => {
 
