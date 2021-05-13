@@ -98,9 +98,45 @@ router.get('/comment/:id', async (req, res) => {
   console.log(postsData)
 });
 
-router.get('/dashboard', (req, res) => {
+router.get('/dashboard', async (req, res) => {
+  try {
+    const dbPostData = await Post.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+      ],
+    });
 
-  res.render('dashboard')
+    const post = dbPostData.map((post) =>
+      post.get({ plain: true }),
+    );
+    // console.log(post)
+
+    const dbCommentData = await Comment.findAll({
+      include: [
+        {
+          model: Post,
+          attributes: ['id'],
+        },
+      ],
+    });
+
+    const comment = dbCommentData.map((comment) =>
+      comment.get({ plain: true }),
+    );
+   
+    console.log("this is req.session!!",req.session)
+    res.render('home', {
+      post,
+      comment,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 })
 // route for submit new post button
 router.post('/submit/post', async (req, res) => {

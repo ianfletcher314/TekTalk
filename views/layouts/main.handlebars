@@ -17,9 +17,10 @@
             <div class="nav-wrapper teal accent-3">
                 <a href="/" class="brand-logo left">TekTalk</a>
                 <ul class="right">
+                   
+                    {{#if loggedIn}}
                     <li><a href="/">Home</a></li>
                     <li><a href="/dashboard">Dashboard</a></li>
-                    {{#if loggedIn}}
                     <li><a  id="logoutbtn">Log Out</a></li>
                     {{else}}
                     <li><a href="/login">Log In</a></li>
@@ -30,7 +31,7 @@
         </nav>
     </div>
     <div class="container">
-     
+       {{#if loggedIn}}
         <!-- floating new note button -->
         <div class="fixed-action-btn">
             <a href="/newpost" class="btn-floating btn-large teal accent-3">
@@ -38,6 +39,9 @@
             </a>
         
         </div>
+                {{else}}
+                
+                         {{/if}}
         
         {{{body}}}
         </div>
