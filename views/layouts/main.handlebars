@@ -15,9 +15,9 @@
 <body>
     <div class="navbar-fixed">
         <nav>
-            <div class="nav-wrapper teal accent-3">
+            <div class="nav-wrapper teal accent-3 ">
                 <a href="/" class="brand-logo left">TekTalk</a>
-                <ul class="right">
+                <ul class="right down">
                    
                     {{#if loggedIn}}
                     <li><a href="/" class="btnbtn waves-effect teal accent-3">Home</a></li>
@@ -49,11 +49,11 @@
         </div>
         <script src='/logoutScript.js'></script>
             <style type="text/css">
+            .down {
+                transform: translateY(-3px) !important;
+            }
             .btnbtn {
-                /*
-      All of the base styles have
-      moved to the “CSS” tab above.
-    */
+        
                 transition: transform 250ms !important;
             }
 
