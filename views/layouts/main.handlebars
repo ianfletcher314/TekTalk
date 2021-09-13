@@ -16,7 +16,7 @@
     <div class="navbar-fixed">
         <nav>
             <div class="nav-wrapper teal accent-3">
-                <a href="/" class="brand-logo left">TekTalk</a>
+                <a href="/" class="brand-logo left btnbtn  waves-effect teal accent-3">TekTalk</a>
                 <ul class="right">
                    
                     {{#if loggedIn}}
@@ -41,11 +41,11 @@
             </a>
         
         </div>
-                {{else}}
-                
-                         {{/if}}
-        
+        {{#if loggedIn}}
         {{{body}}}
+         {{else}}
+         <h1> Please Log In to See Content</h1>
+             {{/if}}
         </div>
         <script src='/logoutScript.js'></script>
             <style type="text/css">
