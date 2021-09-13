@@ -31,8 +31,8 @@ if (username , password ){
 }
 const unhide=()=>{
     console.log("unhidden")
-    document.getElementById("login").classList.add("hide")
-    document.getElementById("signup").classList.remove("hide")
+    document.getElementsByClassName("login").classList.add("hide")
+    document.getElementsByClassName("signup").classList.remove("hide")
     
 
 }
