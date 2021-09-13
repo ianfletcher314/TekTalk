@@ -4,8 +4,9 @@
       moved to the “CSS” tab above.
     */
     transition: transform 250ms!important;
+    font-style: italic;
   }
   
-  .btnbtn:hover {
+.btnbtn:hover {
     transform: translateY(-10px)!important;
   }

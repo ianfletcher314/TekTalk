@@ -18,11 +18,25 @@
                     <label class="active" for="textarea2">Post Content</label>
                 </div>
             </div>
-            <a  id="submitPostBtn" class="waves-effect waves-teal btn-flat btnbtn">
+            <a id="submitPostBtn" class="waves-effect waves-teal btn-flat btnbtn">
                 SUBMIT
             </a>
         </form>
         <script src='submitPost.js'></script>
+        <style type="text/css">
+            .btnbtn {
+                /*
+      All of the base styles have
+      moved to the “CSS” tab above.
+    */
+                transition: transform 250ms !important;
+                font-style: italic;
+            }
+
+            .btnbtn:hover {
+                transform: translateY(-10px) !important;
+            }
+        </style>
     </div>
 
 
