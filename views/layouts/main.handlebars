@@ -20,11 +20,11 @@
                 <ul class="right">
                    
                     {{#if loggedIn}}
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/dashboard">Dashboard</a></li>
-                    <li><a  id="logoutbtn">Log Out</a></li>
+                    <li><a href="/" class="btnbtn">Home</a></li>
+                    <li><a href="/dashboard" class="btnbtn">Dashboard</a></li>
+                    <li><a  id="logoutbtn" class="btnbtn">Log Out</a></li>
                     {{else}}
-                    <li><a href="/login">Log In</a></li>
+                    <li><a href="/login" class="btnbtn">Log In</a></li>
                     {{/if}}
                     
                 </ul>
@@ -36,7 +36,7 @@
        {{!-- this works --}}
         <!-- floating new note button -->
         <div class="fixed-action-btn">
-            <a href="/newpost" class="btn-floating btn-large teal accent-3">
+            <a href="/newpost" class="btn-floating btn-large teal accent-3 btnbtn">
                 <i class="large material-icons">mode_edit</i>
             </a>
         
