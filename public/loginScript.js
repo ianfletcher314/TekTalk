@@ -1,4 +1,3 @@
-console.log("itsworking")
 
 
 const  loginPlease = async () => {
@@ -30,10 +29,8 @@ if (username , password ){
 
 }
 const unhide=()=>{
-    console.log("working")
     var element = document.getElementById("login")
     var signup = document.getElementById("signup")
-    console.log(element)
    element.classList.add("hide")
    signup.classList.remove("hide")
 
@@ -42,3 +39,5 @@ const unhide=()=>{
 
 document.getElementById("loginSubmitBtn").addEventListener("click", loginPlease);
 document.getElementById("signUpButton").addEventListener("click", unhide);
+var newUserElement = document.getElementById("createNewUser")
+console.log(newUserElement)

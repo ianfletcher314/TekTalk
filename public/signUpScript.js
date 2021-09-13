@@ -1,7 +1,8 @@
-console.log("itsworking")
+console.log("signup working")
 
 
 const  createUserPlease = async () => {
+console.log(" clicked on new user")
 const username = document.querySelector('#username').value
 const email = document.querySelector('#email').value
 const password = document.querySelector('#password').value
@@ -31,4 +32,8 @@ if (username , email , password ){
 
 }
 
-document.getElementById("createNewUser").addEventListener("click", createUserPlease);
+
+
+var bigElement = document.getElementById("createNewUser")
+console.log(bigElement)
+bigElement.addEventListener("click", createUserPlease);
