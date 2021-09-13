@@ -30,13 +30,14 @@ if (username , password ){
 
 }
 const unhide=()=>{
-    console.log("unhidden")
-    document.getElementsByClassName("login").classList.add("hide")
-    document.getElementsByClassName("signup").classList.remove("hide")
-    
+    console.log("working")
+    var element = document.getElementById("login")
+    var signup = document.getElementById("signup")
+    console.log(element)
+   element.classList.add("hide")
+   signup.classList.remove("hide")
 
 }
-
 
 
 document.getElementById("loginSubmitBtn").addEventListener("click", loginPlease);
