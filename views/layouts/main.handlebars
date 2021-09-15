@@ -23,9 +23,10 @@
                     {{#if loggedIn}}
                     <li><a href="/" class="btnbtn waves-effect teal accent-3">Home</a></li>
                     <li><a href="/dashboard" class="btnbtn  waves-effect teal accent-3">Dashboard</a></li>
+                    <li><a href="/newpost" class="btnbtn  waves-effect teal accent-3">Make A Post</a></li>
                     <li><a id="logoutbtn" class="btnbtn  waves-effect teal accent-3">Log Out</a></li>
                     {{else}}
-                    <li><a href="/login" class="btnbtn waves-effect teal accent-3">Log In</a></li>
+                    <li><a  class="btnbtn waves-effect teal accent-3">Log In</a></li>
                     {{/if}}
 
                 </ul>
@@ -44,6 +45,8 @@
         </div>
         {{{body}}}
         {{else}}
+
+        {{!-- this is login and sign up form --}}
         <div id="login" class="center card-panel">
             <h4 id="flow-text" class="white-text center card-panel cyan accent-3">
                 Login
@@ -71,8 +74,7 @@
                     </a>
                 </form>
             </div>
-            <script src='loginScript.js'></script>
-            {{!-- <script src='signUpScript.js' ></script> --}}
+            {{!-- <script src='loginScript.js'></script> --}}
 
 
         </div>
@@ -107,13 +109,16 @@
            
         </form>
     </div>
-<script src='signUpScript.js' ></script>
+
 </div>
         {{/if}}
 
-
     </div>
     <script src='/logoutScript.js'></script>
+    <script src='signUpScript.js' ></script>
+
+
+{{!-- THIS IS WHERE THE STYLING BEGINS --}}
     <style type="text/css">
         .down {
             transform: translateY(-3px) !important;
