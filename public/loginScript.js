@@ -11,7 +11,7 @@ if (username , password ){
     
     console.log(data)
     const response = async(data) =>{
-        fetch('/loginSubmit',{
+        fetch('/login',{
             method: 'POST',
             body: JSON.stringify({username,password}),
             headers: { 'Content-Type': 'application/json' }
