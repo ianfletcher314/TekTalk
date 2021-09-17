@@ -31,6 +31,7 @@ router.post('/login', async (req, res) => {
     });
 
     if (!dbUserData) {
+      console.log("user not found")
       res
         .status(400)
         .json({ message: 'Incorrect email or password. Please try again!' });
@@ -40,6 +41,7 @@ router.post('/login', async (req, res) => {
     const validPassword = await dbUserData.checkPassword(req.body.password);
 
     if (!validPassword) {
+      console.log("password not found")
       res
         .status(400)
         .json({ message: 'Incorrect email or password. Please try again!' });
