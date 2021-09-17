@@ -193,8 +193,8 @@ router.post('/submit/comment', async (req, res) => {
 
 // routes to basic home pages
 router.get('/newpost', (req, res) => {
+  res.render('newpost', {loggedIn:req.session.loggedIn})
   console.log("newPost WOrking")
-  res.render('newpost')
 })
 router.get('/newcomment/:id', (req, res) => {
 

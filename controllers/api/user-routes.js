@@ -30,7 +30,7 @@ router.post('/login', async (req, res) => {
         email: req.body.email,
       },
     });
-console.log(dbUserData, "dbuserdate")
+console.log(dbUserData, "dbusdate")
     if (!dbUserData) {
       console.log("user not found")
       res
