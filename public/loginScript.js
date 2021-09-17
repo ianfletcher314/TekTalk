@@ -1,4 +1,4 @@
-console.log("login Script is 'working' ")
+
 const loginPlease = async () => {
 const email = document.querySelector('#username').value
 const password = document.querySelector('#password').value
@@ -9,7 +9,6 @@ const data = {
     console.log(data,"this is data")
 if (email , password ){
     
-    console.log(data)
     const response = async(data) =>{
         fetch('/api/users/login',{
             method: 'POST',
