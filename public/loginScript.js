@@ -1,12 +1,12 @@
-
-
-const  loginPlease = async () => {
+console.log("login Script is 'working' ")
+const loginPlease = async () => {
 const username = document.querySelector('#username').value
 const password = document.querySelector('#password').value
 const data = { 
     username: username,
     password: password
     };
+    console.log(data,"this is data")
 if (username , password ){
     
     console.log(data)
