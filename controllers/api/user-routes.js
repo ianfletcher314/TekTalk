@@ -23,13 +23,14 @@ router.post('/create-user', async (req, res) => {
 
 // Login
 router.post('/login', async (req, res) => {
+  console.log("--------login script fired")
   try {
     const dbUserData = await User.findOne({
       where: {
         email: req.body.email,
       },
     });
-
+console.log(dbUserData, "dbuserdate")
     if (!dbUserData) {
       console.log("user not found")
       res
