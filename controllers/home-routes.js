@@ -63,8 +63,8 @@ router.get('/post/:id', async (req, res) => {
     console.log(post)
 
     res.render('PostMain', {
-      ...post,
-      // ...comment // logged_in: req.session.logged_in 
+      ...post, loggedIn:req.session.loggedIn
+      
     })
   } catch (err) {
     res.status(500).json(err)
