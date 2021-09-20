@@ -202,7 +202,7 @@ router.get('/newcomment/:id', (req, res) => {
 })
 router.get('/home', (req, res) => {
 
-  res.render('home')
+  res.render('home', {loggedIn:req.session.loggedIn})
 })
 router.get('/login', (req, res) => {
 
