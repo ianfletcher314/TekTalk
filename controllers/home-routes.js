@@ -198,7 +198,7 @@ router.get('/newpost', (req, res) => {
 })
 router.get('/newcomment/:id', (req, res) => {
 
-  res.render('newcomment')
+  res.render('newcomment', {loggedIn:req.session.loggedIn})
 })
 router.get('/home', (req, res) => {
 
