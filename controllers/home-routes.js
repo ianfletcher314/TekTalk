@@ -198,11 +198,11 @@ router.get('/newpost', (req, res) => {
 })
 router.get('/newcomment/:id', (req, res) => {
 
-  res.render('newcomment', {loggedIn:req.session.loggedIn})
+  // res.render('newcomment', {loggedIn:req.session.loggedIn})
 })
 router.get('/home', (req, res) => {
 
-  res.render('home', {loggedIn:req.session.loggedIn})
+  // res.render('home', {loggedIn:req.session.loggedIn})
 })
 router.get('/login', (req, res) => {
 
