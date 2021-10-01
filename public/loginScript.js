@@ -1,6 +1,6 @@
 
 const loginPlease = async () => {
-    // cureently it loggin in requires the username and email not the password so something needs to be changed here 
+    // cureently login is working now that it is checking  for email & password!
 const email = document.querySelector('#email').value
 const password = document.querySelector('#password').value
 const data = { 
