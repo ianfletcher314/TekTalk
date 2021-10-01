@@ -1,7 +1,7 @@
 
 const loginPlease = async () => {
     // cureently it loggin in requires the username and email not the password so something needs to be changed here 
-const email = document.querySelector('#username').value
+const email = document.querySelector('#email').value
 const password = document.querySelector('#password').value
 const data = { 
     email: email,
