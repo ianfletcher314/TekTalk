@@ -40,6 +40,5 @@ const unhide=()=>{
 document.getElementById("loginSubmitBtn").addEventListener("click", loginPlease);
 document.getElementById("signUpButton").addEventListener("click", unhide);
 
-// var newUserElement = document.getElementsByClassName("createNewUser")
-// console.log(newUserElement)
+
 
