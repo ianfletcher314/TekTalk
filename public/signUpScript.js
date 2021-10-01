@@ -4,7 +4,7 @@ console.log("signup working")
 const  createUserPlease = async () => {
 console.log(" clicked on new user")
 const username = document.querySelector('#username2').value
-const email = document.querySelector('#email').value
+const email = document.querySelector('#email2').value
 const password = document.querySelector('#password2').value
 console.log(email,"email",password,"password",username,"username")
 const data = { 
