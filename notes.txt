@@ -1,2 +1,16 @@
 this is a mockup of the website
 https://docs.google.com/presentation/d/1TGsnAtloezz-FkZ5VU7f3hynXpKMqQJmitAcSocmzng/edit#slide=id.gf645a61e47_0_7
+
+List of Components:
+
+1. Home
+2. Individual Sound
+3. Samples Page
+4. Drums 
+5. Noise
+6. Loops 
+7. Contact
+10. Profile 
+11. New Sound
+12. Dashboad (scrolling sounds for home page)
+13 Tags (potentially searchable by genre tags)
