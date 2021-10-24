@@ -4,7 +4,7 @@ https://docs.google.com/presentation/d/1TGsnAtloezz-FkZ5VU7f3hynXpKMqQJmitAcSocm
 List of Components:
 
 1. Home
-2. Individual Sound
+2. Individual Sound (now SoundSingle)
 3. Samples Page
 4. Drums 
 5. Noise
