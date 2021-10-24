@@ -5,8 +5,8 @@ List of Components:
 
 1. Home
 2. Individual Sound (now SoundSingle)
-3. Samples Page
-4. Drums 
+3. Samples Page (samples.handlebars)
+4. Drums (drums.handlebars)
 5. Noise
 6. Loops 
 7. Contact
