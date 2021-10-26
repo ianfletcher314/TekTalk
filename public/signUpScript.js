@@ -17,6 +17,7 @@ if (username , email , password ){
     
     console.log(data)
     const response = async(data) =>{
+        // this is coming from the home-routes.js file and should eventually come from the user-routes.js file ie api/create-user
         fetch('/create-user',{
             method: 'POST',
             body: JSON.stringify({username,email,password}),
