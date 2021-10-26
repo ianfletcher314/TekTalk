@@ -19,6 +19,6 @@ List of Components:
 
 To Do Next:
 
-1) make newpost new sound 
+1) figure out routes 
 2) map out what I want home / profile / dashboard to look like
 3) map out what I want the single category page ie noise or drums too look like
