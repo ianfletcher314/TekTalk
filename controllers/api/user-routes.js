@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-// CREATE new user
+// CREATE new user--------------------------------------------------------
 router.post('/create-user', async (req, res) => {
   try {
     const dbUserData = await User.create({
@@ -21,7 +21,7 @@ router.post('/create-user', async (req, res) => {
   }
 });
 
-// Login
+// Login -------------------------------------------------------------------------
 router.post('/login', async (req, res) => {
   console.log("--------login script fired")
   try {
@@ -62,7 +62,7 @@ console.log(dbUserData, "dbusdate")
   }
 });
 
-// Logout
+// Logout-------------------------------------------------------------------------
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
