@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Post, User, Comment } = require('../models');
-// console.log("routerworking")
+
+// HOME PAGE GET ROUTE: route to view the home page ----------------------------------------------------------------
 router.get('/', async (req, res) => {
   try {
     const dbPostData = await Post.findAll({
@@ -41,7 +42,8 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 })
-// route to view individual post
+
+// INDIVIDUAL POST GET ROUTE: route to view an individual post  -----------------------------------------------------------------------------------
 router.get('/post/:id', async (req, res) => {
   console.log(req.params.id, "id")
   try {
@@ -72,7 +74,8 @@ router.get('/post/:id', async (req, res) => {
   }
 
 });
-// route to view single comment
+
+//SINGLE COMMENT GET ROUTE :  route to view single comment ----------------------------------------------
 router.get('/comment/:id', async (req, res) => {
   console.log(req.params.id, "id")
   try {
@@ -98,6 +101,7 @@ router.get('/comment/:id', async (req, res) => {
   console.log(postsData)
 });
 
+// DASHBOARD GET ROUTE: route to view the dashboard view -----------------------------------------------------
 router.get('/dashboard', async (req, res) => {
   try {
     const dbPostData = await Post.findAll({
@@ -138,7 +142,8 @@ router.get('/dashboard', async (req, res) => {
     res.status(500).json(err);
   }
 })
-// route for submit new post button
+
+// NEW SOUND POST ROUTE: route for submit new post button---------------------------------------------------------------
 router.post('/submit/post', async (req, res) => {
   console.log("in router.post")
   try {
@@ -165,7 +170,7 @@ router.post('/submit/post', async (req, res) => {
   }
 });
 
-// route for submit new comment button
+// NEW COMMENT POST ROUTE:route for submit new comment button-------------------------------------------------------
 router.post('/submit/comment', async (req, res) => {
   console.log("in router.post")
   try {
@@ -191,33 +196,39 @@ router.post('/submit/comment', async (req, res) => {
   }
 });
 
+
+
+
 // routes to basic home pages
-router.get('/newpost', (req, res) => {
-  res.render('newpost', {loggedIn:req.session.loggedIn})
-  console.log("newPost WOrking")
-})
-router.get('/newcomment/:id', (req, res) => {
+// router.get('/newpost', (req, res) => {
+//   res.render('newpost', {loggedIn:req.session.loggedIn})
+//   console.log("newPost WOrking")
+// })
+// router.get('/newcomment/:id', (req, res) => {
 
-  // res.render('newcomment', {loggedIn:req.session.loggedIn})
-})
-router.get('/home', (req, res) => {
+//   // res.render('newcomment', {loggedIn:req.session.loggedIn})
+// })
+// router.get('/home', (req, res) => {
 
-  // res.render('home', {loggedIn:req.session.loggedIn})
-})
-router.get('/login', (req, res) => {
+//   // res.render('home', {loggedIn:req.session.loggedIn})
+// })
+// router.get('/login', (req, res) => {
 
-  res.render('login')
-})
-router.get('/signup', (req, res) => {
+//   res.render('login')
+// })
+// router.get('/signup', (req, res) => {
 
-  res.render('signup')
-})
-router.get('/created', (req, res) => {
+//   res.render('signup')
+// })
+// router.get('/created', (req, res) => {
 
-  res.render('created')
-})
+//   res.render('created')
+// })
 
-// route to create new user
+
+// THis section should be in the api/user routes however I am leaving it so I can check which one is in use
+
+// NEW UESER POST ROUTE: route to Create New User---------------------------------------------------------------
 router.post('/create-user', async (req, res) => {
   console.log("in router.post")
   try {
@@ -244,7 +255,7 @@ router.post('/create-user', async (req, res) => {
     res.status(500).json(err);
   }
 });
-// Login
+// LOGIN POST ROUTE: route to Login---------------------------------------------------------------
 router.post('/loginSubmit', async (req, res) => {
   try {
     const dbUserData = await User.findOne({
@@ -283,7 +294,7 @@ router.post('/loginSubmit', async (req, res) => {
   }
 });
 
- // Logout
+ // LOGOUT POST ROUTE: route to logout ---------------------------------------------------------------
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
