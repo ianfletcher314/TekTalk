@@ -195,15 +195,16 @@ router.post('/submit/comment', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-
-
-
-// routes to basic home pages
+// NEW POST GET ROUTE : route to get the new post page ----------------------------------------------------
 router.get('/newpost', (req, res) => {
   res.render('newpost', {loggedIn:req.session.loggedIn})
   console.log("newPost WOrking")
 })
+
+
+
+// routes to basic home pages-----------------------------------------------------------------------------------
+
 // router.get('/newcomment/:id', (req, res) => {
 
 //   // res.render('newcomment', {loggedIn:req.session.loggedIn})
