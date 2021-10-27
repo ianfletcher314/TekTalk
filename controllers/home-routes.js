@@ -132,7 +132,7 @@ router.get('/dashboard', async (req, res) => {
     );
    
     console.log("this is req.session!!",req.session)
-    res.render('home', {
+    res.render('dashboard', {
       post,
       comment,
       loggedIn: req.session.loggedIn,
