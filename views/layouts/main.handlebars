@@ -33,8 +33,7 @@
             </div>
         </nav>
     </div>
-    <div class="container row">
-        {{#if loggedIn}}
+         {{#if loggedIn}}
         {{!-- this works --}}
         <!-- floating new note button -->
         <div class="fixed-action-btn">
@@ -46,7 +45,7 @@
         {{{body}}}
 
         {{else}}
-
+   <div class="container row">
         {{!-- this is login and sign up form --}}
         <div id="login" class="card-panel col s6 offset-s3 center roof round">
             <h4 id="flow-text" class="black-text center logofont">
