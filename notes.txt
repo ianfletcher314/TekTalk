@@ -20,5 +20,7 @@ List of Components:
 To Do Next:
 
 1) figure out routes 
-2) map out what I want home / profile / dashboard to look like
-3) map out what I want the single category page ie noise or drums too look like
+2) finish creating home page from the PP mock up 
+    (currently being built in dashboard component so it  can be put into home)
+3) map out what I want  profile / dashboard to look like
+4) map out what I want the single category page ie noise or drums too look like
