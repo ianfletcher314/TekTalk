@@ -26,26 +26,26 @@
                     <li><a href="/newpost" class="btnbtn  waves-effect green accent-3">Make A Post</a></li>
                     <li><a id="logoutbtn" class="btnbtn  waves-effect green accent-3">Log Out</a></li>
                     {{else}}
-    
+
                     {{/if}}
 
                 </ul>
             </div>
         </nav>
     </div>
-         {{#if loggedIn}}
-        {{!-- this works --}}
-        <!-- floating new note button -->
-        <div class="fixed-action-btn">
-            <a href="/newpost" class="btn-floating btn-large green accent-3 btnbtn">
-                <i class="large material-icons">mode_edit</i>
-            </a>
+    {{#if loggedIn}}
+    {{!-- this works --}}
+    <!-- floating new note button -->
+    <div class="fixed-action-btn">
+        <a href="/newpost" class="btn-floating btn-large green accent-3 btnbtn">
+            <i class="large material-icons">mode_edit</i>
+        </a>
 
-        </div>
-        {{{body}}}
+    </div>
+    {{{body}}}
 
-        {{else}}
-   <div class="container row">
+    {{else}}
+    <div class="container row">
         {{!-- this is login and sign up form --}}
         <div id="login" class="card-panel col s6 offset-s3 center roof round">
             <h4 id="flow-text" class="black-text center logofont">
@@ -84,30 +84,30 @@
             </h4>
 
             <div class="row">
-            <form class="col s12">
-                <div class="row">
-                    <div class="active input-field col s10 offset-s1">
-                        <input  id="username2" type="text" data-length="20">
-                        <label class="active" for="input_text">Username</label>
+                <form class="col s12">
+                    <div class="row">
+                        <div class="active input-field col s10 offset-s1">
+                            <input id="username2" type="text" data-length="20">
+                            <label class="active" for="input_text">Username</label>
+                        </div>
                     </div>
-                </div>
-                <div class="row ">
-                    <div class="active input-field col s10 offset-s1">
-                        <input  id="email2" type="text" data-length="20">
-                        <label class="active" for="input_text">Email</label>
+                    <div class="row ">
+                        <div class="active input-field col s10 offset-s1">
+                            <input id="email2" type="text" data-length="20">
+                            <label class="active" for="input_text">Email</label>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="active input-field col s10 offset-s1 ">
-                        <input id="password2" type="password" data-length="20" >
-                        <label class="active" for="input_text">Password (6-20 characters)</label>
+                    <div class="row">
+                        <div class="active input-field col s10 offset-s1 ">
+                            <input id="password2" type="password" data-length="20">
+                            <label class="active" for="input_text">Password (6-20 characters)</label>
+                        </div>
                     </div>
-                </div>
-                <a id="createNewUser" class="waves-effect waves-teal btn-flat createNewUser">
-                    Create User
-                </a>
+                    <a id="createNewUser" class="waves-effect waves-teal btn-flat createNewUser">
+                        Create User
+                    </a>
 
-            </form> 
+                </form>
             </div>
         </div>
 
@@ -115,19 +115,21 @@
     {{/if}}
 
     </div>
-    {{!-------------------------- THIS IS WHERE THE JS IS ADDED    ----------------------------}}
+    {{!-------------------------- THIS IS WHERE THE JS IS ADDED ----------------------------}}
     <script src='/logoutScript.js'></script>
     <script src='signUpScript.js'></script>
 
 
     {{!-------------------------- THIS IS WHERE THE STYLING BEGINS ----------------------------}}
     <style type="text/css">
-        .logofont{
+        .logofont {
             font-family: 'Courier New', Courier, monospace;
         }
+
         body {
             background-color: #212121
         }
+
         .down {
             transform: translateY(-3px) !important;
         }
@@ -144,13 +146,16 @@
         .hide {
             display: none;
         }
-        .smaller{
-            width:50%
+
+        .smaller {
+            width: 50%
         }
-        .roof{
-            margin-top:5%;
+
+        .roof {
+            margin-top: 5%;
         }
-        .round{
+
+        .round {
             border-radius: 10%;
         }
     </style>
