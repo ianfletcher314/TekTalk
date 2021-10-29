@@ -26,3 +26,13 @@ To Do Next:
 4) map out what I want the single category page ie noise or drums too look like
 5)update CSS to only be in the views it needs to be in
 6)create a single sound component and redesign the newpost component in slides
+
+
+
+https://developer.spotify.com/documentation/widgets/generate/embed/
+https://developer.apple.com/documentation/musickitjs/adding_musickit_features_using_html
+Using the embeded spotify and apple music players could allow the user to input the song uri and click a toggle 
+box that says spotify apple youtube tidal or whatever. once  the submit button is clicked the js would read the
+button click status and if it was spotify It would create a spotify player with the inputed song as representation. 
+this way a beat maker could have a variety of loops noise drums and samples in their respective libraries and they 
+could be youtube spotify apple tidal or whatever else! 
