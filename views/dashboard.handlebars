@@ -3,13 +3,13 @@
         <div id="homePhoto" class="col s10 push-s1 blue">
             photo
         </div>
-        <div class="col s12 center">loops</div>
-        <div class="col s12 center">samples</div>
-        <div class="col s12 center">drums</div>
-        <div class="col s12 center">noise</div>
-        <div class="col s12 center">
-            <div class="col s8 push-s2">
-                description paragraph goes here
+        <div class="col s12 center dashLink firstLink">LOOPS</div>
+        <div class="col s12 center dashLink">SAMPLES</div>
+        <div class="col s12 center dashLink">DRUMS</div>
+        <div class="col s12 center dashLink">NOISE</div>
+        <div class="col s12 center ">
+            <div id="bioPara" class="col s8 push-s2 grey">
+                Ian Fletcher is a Producer/Engineer from St. Louis Missouri specializing in hip-hop and indie-rock
             </div>
         </div>
 
@@ -43,6 +43,14 @@
 </div>
 {{!-- ------------------------------------THIS IS WHERE THE CSS IS ------------------------------------------ --}}
 <style type="text/css">
+    .dashLink{
+        color:blue;
+        margin-top:2%
+    }
+    .firstLink{
+        margin-top:5%
+    }
+
     #dashSoundsContainer{
         height:90%;
         transform: translateX(3%);
@@ -50,15 +58,22 @@
     }
 
     #dashLinksContainer{
-        height:70%;
+        height:75%;
         transform: translateX(15%);
 
 
     }
     #homePhoto{
-        height:45%;
+        height:40%;
         margin-top:5%
     }
+    #bioPara{
+        color:red;
+        margin-top:5%;
+        font-size:14px;
+    };
+
+  
 
 </style>
 
