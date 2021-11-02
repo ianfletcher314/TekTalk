@@ -1,6 +1,6 @@
-<div class="row card-panel bgcolor no-margin height">
-    <div id="dashLinksContainer" class="col s3 card-panel grey lighten-2 rounder">
-        <div id="homePhoto" class="col s8 push-s2">
+<div class="row card-panel bgcolor height">
+    <div id="dashLinksContainer" class="col s3 card-panel grey lighten-2 rounder no-margin">
+        <div id="homePhoto" class="col s8 push-s2 rounder">
         {{!-- this is the photo --}}
         </div>
 
@@ -9,13 +9,13 @@
         <div class="col s12 center dashLink">DRUMS</div>
         <div class="col s12 center dashLink">NOISE</div>
         <div class="col s12 center ">
-            <div id="bioPara" class="col s8 push-s2 grey">
+            <div id="bioPara" class="col s8 push-s2 grey rounder">
                 Ian Fletcher is a Producer/Engineer from St. Louis Missouri specializing in hip-hop and indie-rock
             </div>
         </div>
 
     </div>
-    <div id="dashSoundsContainer" class="col s7 push-s1 card-panel grey darken-2 rounder">
+    <div id="dashSoundsContainer" class="col s7 push-s1 card-panel grey darken-2 rounder no-margin">
         <div class="col s10 offset-s1 card-panel green firstLink">sound
         </div>
         <div class="col s10 offset-s1 card-panel green">sound
@@ -54,8 +54,15 @@
         background-color: #212121
     }
     .rounder{
-        border-radius: 10%;
+        border-radius: 4%;
     }
+    .no-margin{
+        margin-top: 0%;
+        margin-bottom: 0%;
+        margin-right: 0%;
+        margin-left:0%;
+           
+     }
 
     #dashSoundsContainer{
         height:90%;
