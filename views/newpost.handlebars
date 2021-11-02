@@ -8,31 +8,31 @@
         <div class="row">
             <form class="col s12">
                 <div class="row">
-                    <div class="active input-field col s10 offset-s1">
+                    <div class="active input-field col s8 offset-s2">
                         <input id="input_text" type="text" data-length="10">
                         <label class="active" for="input_text">SOUND TITLE</label>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="active input-field col s10 offset-s1">
+                    <div class="active input-field col s8 offset-s2">
                         <textarea id="textarea2" class="materialize-textarea" data-length="1200"></textarea>
                         <label class="active" for="textarea2">SOUND URL</label>
                     </div>
                 </div>
-                <div>
-                    {{!-- THIS CODE CAN BE USED TO SELECT BETWEEN SPOTIFY APPLE MUSIC AND YOUTUBE LINKS --}}
-                    <form action="/action_page.php">
-                        <label for="country">Country</label>
-                        <select id="country" name="country">
-                            <option value="australia"></option>
-                            <option value="australia">Spotify</option>
-                            <option value="canada">Apple Music</option>
-                            <option value="usa">YouTube</option>
-                        </select>
-                    </form>
-                </div>
+
                 <div class="row">
-                    <div class="active input-field col s10 offset-s1">
+                    <div class="col s4 offset-s2">
+                        <form action="/action_page.php">
+                            <label for="country">LINK TYPE</label>
+                            <select id="country" name="country">
+                                <option value="australia"></option>
+                                <option value="australia">Spotify</option>
+                                <option value="canada">Apple Music</option>
+                                <option value="usa">YouTube</option>
+                            </select>
+                        </form>
+                    </div>
+                    <div class="active input-field col s4 ">
                         <textarea id="textarea3" class="materialize-textarea" data-length="1200"></textarea>
                         <label class="active" for="textarea2">MIN:SEC</label>
                     </div>
@@ -48,61 +48,61 @@
                     SUBMIT
                 </a>
             </form>
-
-
-            {{!-- JAVASCRIPT AND CSS IMPORTED / INLINE STYLED ------------------------------------------------- --}}
-            <script src='submitPost.js'></script>
-            <style type="text/css">
-                .btnbtn {
-
-                    transition: transform 250ms !important;
-                }
-
-                .btnbtn:hover {
-                    transform: translateY(-10px) !important;
-                }
-
-                .bot-margin {
-                    margin-bottom: 12%;
-                }
-
-                    {
-                        {
-                         !--
-                        /* this is the css from the form*/
-                        --
-                    }
-                }
-
-                input[type=text],
-                select {
-                    width: 100%;
-                    padding: 12px 20px;
-                    margin: 8px 0;
-                    display: inline-block;
-                    border: 1px solid #ccc;
-                    border-radius: 4px;
-                    box-sizing: border-box;
-                }
-
-                input[type=submit] {
-                    width: 100%;
-                    background-color: #4CAF50;
-                    color: white;
-                    padding: 14px 20px;
-                    margin: 8px 0;
-                    border: none;
-                    border-radius: 4px;
-                    cursor: pointer;
-                }
-
-                input[type=submit]:hover {
-                    background-color: #45a049;
-                }
-            </style>
-
         </div>
+        {{!-- JAVASCRIPT AND CSS IMPORTED / INLINE STYLED ------------------------------------------------- --}}
+        <script src='submitPost.js'></script>
+        <style type="text/css">
+            .btnbtn {
 
+                transition: transform 250ms !important;
+            }
+
+            .btnbtn:hover {
+                transform: translateY(-10px) !important;
+            }
+
+            .bot-margin {
+                margin-bottom: 12%;
+            }
+
+            .no-margin {
+                margin-top: 0%;
+                margin-bottom: 0%;
+                margin-right: 0%;
+                margin-left: 0%;
+
+            }
+
+            .height {
+                height: 91vh;
+            }
+
+            input[type=text],
+            select {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+
+            input[type=submit] {
+                width: 100%;
+                background-color: #4CAF50;
+                color: white;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+            input[type=submit]:hover {
+                background-color: #45a049;
+            }
+        </style>
 
     </div>
 </div>
