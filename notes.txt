@@ -4,7 +4,7 @@ https://docs.google.com/presentation/d/1TGsnAtloezz-FkZ5VU7f3hynXpKMqQJmitAcSocm
 List of Components:
 
 1. Home
-2. Individual Sound (SoundSingle.handlebars)
+2. Individual Sound (PostMain.handlebars)
 3. Samples Page (Samples.handlebars)
 4. Drums (Drums.handlebars)
 5. Noise (Noise.handlebars)
