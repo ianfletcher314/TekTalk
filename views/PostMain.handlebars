@@ -36,28 +36,29 @@
             </a>
         </form>
 
+        {{!-- model for comment --}}
+       
+            {{!-- <h5 id="flow-text" class="white-text center card-panel purple lighten-4">
+                comments
+            </h5> --}}
+
+            {{!-- the handlebars to get comments -------------------------needs home-routs to have comment get too --}}
+            {{#each Comments as |comment|}}
+    
+                    {{>singlecomment}}
+        
+            {{/each}}
+            <p>
+                {{User.username}}
+            </p>
+
+
+
+
     </div>
     
    
 
-    {{!-- model for comment --}}
-    <div id="flow-text" class="center card-panel">
-        <h5 id="flow-text" class="white-text center card-panel purple lighten-4">
-            comments
-        </h5>
-
-        {{!-- the handlebars to get comments -------------------------needs home-routs to have comment get too --}}
-        {{#each Comments as |comment|}}
-  
-                {{>singlecomment}}
-    
-        {{/each}}
-        <p>
-            {{User.username}}
-        </p>
-
-
-    </div>
    
 
 
