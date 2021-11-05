@@ -1,4 +1,4 @@
-<!-- this is the template for Home Page for some reasong this works even when comted out -->
+{{!-- <!-- this is the template for Home Page for some reasong this works even when comted out -->
 <div >
     <div  class="center card-panel no-margin">
         <h3 id="flow-text" class="grey-text text-darken-1 center logofont">
@@ -14,4 +14,122 @@
     {{!-- once comment rout is set up in home-routs.js this will generate the section --}}
     
 
+</div> --}}
+{{!-- old home  --}}
+
+<div class="row card-panel bgcolor height">
+    <div id="dashLinksContainer" class="col s3 card-panel grey lighten-2 rounder no-margin">
+        <div id="homePhoto" class="col s8 push-s2 rounder">
+        {{!-- this is the photo --}}
+        </div>
+
+        <div class="col s12 center dashLink firstLink btnbtn2">LOOPS</div>
+        <div class="col s12 center dashLink btnbtn2">SAMPLES</div>
+        <div class="col s12 center dashLink btnbtn2">DRUMS</div>
+        <div class="col s12 center dashLink btnbtn2">NOISE</div>
+        <div class="col s12 center ">
+            <div id="bioPara" class="col s8 push-s2 grey rounder">
+                Ian Fletcher is a Producer/Engineer from St. Louis Missouri specializing in hip-hop and indie-rock
+            </div>
+        </div>
+
+    </div>
+    <div id="dashSoundsContainer" class="col s7 push-s1 card-panel grey darken-2 rounder no-margin">
+        <div class="col s10 offset-s1 card-panel green firstLink shadow btnbtn2">sound
+        </div>
+        <div class="col s10 offset-s1 card-panel green shadow btnbtn2">sound
+        </div>
+        <div class="col s10 offset-s1 card-panel green shadow btnbtn2">sound
+        </div>
+        <div class="col s10 offset-s1 card-panel green shadow btnbtn2">sound
+        </div>
+        <div class="col s10 offset-s1 card-panel green shadow btnbtn2">sound
+        </div>
+        <div class="col s10 offset-s1 card-panel green shadow btnbtn2">sound
+        </div>
+        <div class="col s10 offset-s1 card-panel green shadow btnbtn2">sound
+        </div>
+        <div class="col s10 offset-s1 card-panel green shadow btnbtn2">sound
+        </div>
+        <div class="col s10 offset-s1 card-panel green shadow btnbtn2">sound
+        </div>
+        <div class="col s10 offset-s1 card-panel green shadow btnbtn2">sound
+        </div>
+        <div class="col s10 offset-s1 card-panel green shadow btnbtn2">sound
+        </div>
+       
+    </div>
 </div>
+{{!-- ------------------------------------THIS IS WHERE THE CSS IS ------------------------------------------ --}}
+<style type="text/css">
+    .dashLink{
+        color:black;
+        margin-top:2%;
+        text-shadow: 1px 1px 1px grey
+    }
+    .firstLink{
+        margin-top:5%
+    }
+    .bgcolor{
+        background-color: #212121
+    }
+    .rounder{
+        border-radius: 4%;
+    }
+    .no-margin{
+        margin-top: 0%;
+        margin-bottom: 0%;
+        margin-right: 0%;
+        margin-left:0%;  
+    }
+    .shadow{
+        box-shadow: 2px 2px 1px black;
+    }
+    .btnbtn2 {
+
+        transition: transform 250ms !important;
+    }
+
+    .btnbtn2:hover {
+        transform: translateY(-5px) !important;
+    }
+
+    #dashSoundsContainer{
+        height:90%;
+        transform: translateX(3%);
+    }
+
+    #homePhoto{
+        background-image: url("https://images.squarespace-cdn.com/content/v1/55954d27e4b01f9a920cf282/1615988901607-CZCQFVT6FHO6PDE6LQM4/Ben+Dorenfeld.jpg?format=500w");
+        background-repeat: no-repeat;
+        background-size: 200px 200px;
+        border-style: solid;
+        border-color: black;
+        border-width: .5px;
+        height:40%;
+        margin-top:5%;
+        box-shadow: 1px 1px 5px grey;
+      
+    }
+
+    #dashLinksContainer{
+        height:75%;
+        transform: translateX(15%);
+
+
+    }
+
+    #bioPara{
+        color:white;
+        margin-top:5%;
+        font-size:14px;
+        box-shadow: 2px 2px 5px grey;
+        
+    };
+
+  
+
+</style>
+
+
+
