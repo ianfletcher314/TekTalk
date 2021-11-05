@@ -1,5 +1,6 @@
 <!-- this is the template for Single Post with submitable comment section bellow  -->
-<div id="flow-text" class="center ">
+
+<div  class="container ">
     {{!-- ---------------------------------POST BEGINS HERE-------------------------------------- --}}
     <div id="flow-text" class="center card-panel">
         <h5 id="flow-text" class="white-text center card-panel pink lighten-4">
@@ -20,22 +21,24 @@
             class="grey-text waves-effect waves-light btn  purple lighten-4">Delete</a>
 
         <a id="editBtn" href="/edit/post/{{id}}" class="grey-text waves-effect waves-light btn  grey lighten-4">Edit</a>
-       
-    </div>
-    {{!-- ------------------------------INPUT COMMENT SECTION BEGINS HERE---------------------------------- --}}
-    <form class="col s12">
+       {{!-- ------------------------------INPUT COMMENT SECTION BEGINS HERE---------------------------------- --}}
+        <form class="col s12">
 
-        <div class="row">
-            <div class="active input-field col s12">
-                <textarea id="commentText" class="materialize-textarea" data-length="120"></textarea>
-                <label class="active" for="textarea2">Comment Text</label>
-        
+            <div class="row">
+                <div class="active input-field col s12">
+                    <textarea id="commentText" class="materialize-textarea" data-length="120"></textarea>
+                    <label class="active" for="textarea2">Comment Text</label>
+            
+                </div>
             </div>
-        </div>
-        <a id="newCmtSubmitBtn" class="waves-effect waves-teal btn-flat">
-            SUBMIT
-        </a>
-    </form>
+            <a id="newCmtSubmitBtn" class="waves-effect waves-teal btn-flat">
+                SUBMIT
+            </a>
+        </form>
+
+    </div>
+    
+   
 
     {{!-- model for comment --}}
     <div id="flow-text" class="center card-panel">
