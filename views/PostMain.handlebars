@@ -1,17 +1,39 @@
 <!-- this is the template for Single Post with submitable comment section bellow  -->
 
-<div  class="container ">
+<div class="container">
     {{!-- ---------------------------------POST BEGINS HERE-------------------------------------- --}}
-    
-    
 
-<div class="row">
-    <div class="col s12 cardpanel grey center height">
-        <iframe id="SpotifyPlayer" src="https://open.spotify.com/embed/artist/391cQTgUsbV6iSWdvDdCbp?si=gP1kagBLRIuL_Emxt4Nr6Q" 
-    width="500" height="200" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+
+    <div class="row">
+        <div class="col s12 card-panel grey center containerHeight">
+
+            <div id="playerContainer" class="col s8 green">
+                <iframe id="player" src="https://open.spotify.com/embed/artist/391cQTgUsbV6iSWdvDdCbp?si=gP1kagBLRIuL_Emxt4Nr6Q"
+                    width="500" height="200" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            </div>
+
+            <div id="descriptionContainer" class="col s4 red">
+
+                <div id="description" class="card-panel">
+                    description
+                </div>
+            </div>
+
+            <div id="commentContainer" class="col s10 offset-s1 blue">
+                {{#each Comments as |comment|}}
+
+                {{>singlecomment}}
+
+                {{/each}}
+                <p>
+                    {{User.username}}
+                </p>
+            </div>
+
+        </div>
 
     </div>
-</div>
 
 
 
@@ -19,13 +41,16 @@
 
 
 
-    
-   
 
-   
+
+
+
 
 
 </div>
 
 
 <script src='/subComment.js'></script>
+<style type="text/css">
+
+</style>
