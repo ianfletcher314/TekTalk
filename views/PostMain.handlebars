@@ -5,9 +5,8 @@
 
 
 
-    <div class="row">
+    <div class="row" >
         <div class="col s12 card-panel grey center containerHeight">
-
             <div id="playerContainer" class="col s8 green">
                 <iframe id="player" src="https://open.spotify.com/embed/artist/391cQTgUsbV6iSWdvDdCbp?si=gP1kagBLRIuL_Emxt4Nr6Q"
                     width="500" height="200" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
@@ -26,31 +25,22 @@
                 {{>singlecomment}}
 
                 {{/each}}
-                <p>
+                {{!-- <p>
                     {{User.username}}
-                </p>
+                </p> --}}
             </div>
 
         </div>
 
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
 
 
 <script src='/subComment.js'></script>
 <style type="text/css">
+    .containerHeight{
+        margin-top: 4%;
+        height: 80vh;
+    }
 
 </style>
