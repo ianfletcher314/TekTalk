@@ -5,17 +5,18 @@
 
 
 
-    <div class="row" >
+    <div class="row">
         <div class="col s12 card-panel grey center containerHeight">
             <div id="playerContainer" class="col s7">
-                <iframe id="player" src="https://open.spotify.com/embed/artist/391cQTgUsbV6iSWdvDdCbp?si=gP1kagBLRIuL_Emxt4Nr6Q"
+                <iframe id="player"
+                    src="https://open.spotify.com/embed/artist/391cQTgUsbV6iSWdvDdCbp?si=gP1kagBLRIuL_Emxt4Nr6Q"
                     width="500" height="200" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
             </div>
 
             <div id="descriptionContainer" class="col s4 offset-s1 grey lighten-1">
 
                 <div id="description" class="card-panel">
-                    This song could be used as a drum sample. 
+                    This song could be used as a drum sample.
                     The repeat drops could be pitched down to create more of a bass effect
                     <p>
                         Sample Time : 1:38
@@ -23,7 +24,7 @@
                 </div>
             </div>
 
-            <div id="commentContainer" class="col s10 offset-s1 grey lighten-1">
+            <div id="commentContainer" class="col s6 offset-s1 grey lighten-1">
                 {{#each Comments as |comment|}}
 
                 {{>singlecomment}}
@@ -32,6 +33,20 @@
                 {{!-- <p>
                     {{User.username}}
                 </p> --}}
+            </div>
+            <div class="col s4 offset-s1" id="inputContainer">
+
+                <form class="col s12 card-panel white inputHeight">
+                    <div class="active input-field inputinput">
+                        <textarea id="commentText" class="materialize-textarea" data-length="120"></textarea>
+                        <label class="active" for="textarea2">Comment</label>
+
+                    </div>
+
+                    <a id="newCmtSubmitBtn" class="waves-effect waves-teal btn-flat submitButton">
+                        SUBMIT
+                    </a>
+                </form>
             </div>
 
         </div>
@@ -42,23 +57,39 @@
 
 <script src='/subComment.js'></script>
 <style type="text/css">
-    .containerHeight{
+    .inputinput{
+        margin-top: 20%;
+    }
+    .submitButton{
+        margin-top: 15%;
+    }
+    .containerHeight {
         margin-top: 4%;
         height: 80vh;
     }
-    #playerContainer{
+    .inputHeight{
+        height: 65%;
+    }
+
+    #playerContainer {
         margin-top: 4%;
         transform: translateX(5%);
         height: 40%;
     }
-    #descriptionContainer{
+
+    #descriptionContainer {
         margin-top: 4%;
         transform: translateX(-5%);
         height: 35%;
     }
-    #commentContainer{
-        margin-top:2%;
+
+    #commentContainer {
+        margin-top: 2%;
         height: 40%;
     }
-
+    #inputContainer{
+        margin-top: 1%;
+        transform: translateX(-5%);
+        height:50vh;
+    }
 </style>
