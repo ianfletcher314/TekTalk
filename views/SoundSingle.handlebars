@@ -1,0 +1,55 @@
+{{!-- <div id="flow-text" class="center card-panel">
+        <h5 id="flow-text" class="white-text center card-panel pink lighten-4">
+            {{post_title}}
+            </h5>
+            <p>
+                {{post_text}}
+            </p>
+            <p>
+                by :{{User.username}}
+            </p>
+
+        <a id="updateBtn" href="/update/{{id}}"
+            class="grey-text waves-effect waves-light btn light-blue lighten-4">Update</a>
+        <a id="commentBtn" href="/newcomment/{{id}}"
+            class="grey-text waves-effect waves-light btn  yellow lighten-4">Comment</a>
+        <a id="deleteBtn" href="/delete/{{id}}"
+            class="grey-text waves-effect waves-light btn  purple lighten-4">Delete</a>
+
+        <a id="editBtn" href="/edit/post/{{id}}" class="grey-text waves-effect waves-light btn  grey lighten-4">Edit</a>
+       {{!-- ------------------------------INPUT COMMENT SECTION BEGINS HERE---------------------------------- --}}
+        <form class="col s12">
+
+            <div class="row">
+                <div class="active input-field col s12">
+                    <textarea id="commentText" class="materialize-textarea" data-length="120"></textarea>
+                    <label class="active" for="textarea2">Comment Text</label>
+            
+                </div>
+            </div>
+            <a id="newCmtSubmitBtn" class="waves-effect waves-teal btn-flat">
+                SUBMIT
+            </a>
+        </form>
+
+        {{!-- model for comment --}}
+       
+            {{!-- <h5 id="flow-text" class="white-text center card-panel purple lighten-4">
+                comments
+            </h5> --}}
+
+            {{!-- the handlebars to get comments -------------------------needs home-routs to have comment get too --}}
+            {{#each Comments as |comment|}}
+    
+                    {{>singlecomment}}
+        
+            {{/each}}
+            <p>
+                {{User.username}}
+            </p>
+
+
+
+
+    </div> --}}
+    
