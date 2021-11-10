@@ -4,7 +4,7 @@
         {{!-- <h3 id="flow-text" class="grey-text text-darken-1 center logofont">
             SOUNDS
         </h3> --}}
-        <div class="loopsContainer col s6 red">
+        <div class="loopsContainer col s5 red">
             <div class="card-panel white scrollContainer">
             {{!-- {{#each post as |post|}}
             {{>singlepost}}
@@ -12,7 +12,7 @@
             </div>
            
         </div>
-        <div class="noiseCointainer col s6 blue">
+        <div class="noiseCointainer col s5 offset-s2 blue">
           <div class="card-panel white scrollContainer">
             {{!-- {{#each post as |post|}}
             {{>singlepost}}
@@ -20,7 +20,7 @@
             </div>
            
         </div>
-        <div class="drumsCointainer col s6 green">
+        <div class="drumsCointainer col s5 green">
             <div class="card-panel white scrollContainer">
             {{!-- {{#each post as |post|}}
             {{>singlepost}}
@@ -28,7 +28,7 @@
             </div>
            
         </div>
-        <div class="samplesCointainer col s6 yellow">
+        <div class="samplesCointainer col s5 offset-s2 yellow">
             <div class="card-panel white scrollContainer">
             {{!-- {{#each post as |post|}}
             {{>singlepost}}
@@ -48,16 +48,21 @@
 <style type="text/css">
     .loopsContainer{
        height: 40vh;
+       transform: translateX(7%);
     }
     .noiseCointainer{
         height: 40vh;
-    }
-    .samplesCointainer{
-        height: 40vh;
+        transform: translateX(-7%);
     }
     .drumsCointainer{
         height: 40vh;
+        transform: translateX(7%);
     }
+    .samplesCointainer{
+        height: 40vh;
+        transform: translateX(-7%);
+    }
+  
     .scrollContainer{
         height:90%;
         margin-top: 2%;
