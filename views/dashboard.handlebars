@@ -20,7 +20,7 @@
             </div>
            
         </div>
-        <div class="drumsCointainer col s5 green">
+        <div class="drumsCointainer col s5 green roofer">
             <div class="card-panel white scrollContainer">
             {{#each post as |post|}}
             {{>singlepost}}
@@ -28,7 +28,7 @@
             </div>
            
         </div>
-        <div class="samplesCointainer col s5 offset-s2 yellow">
+        <div class="samplesCointainer col s5 offset-s2 yellow roofer">
             <div class="card-panel white scrollContainer">
             {{#each post as |post|}}
             {{>singlepost}}
@@ -48,24 +48,27 @@
 <style type="text/css">
     .loopsContainer{
        height: 40vh;
-       transform: translateX(7%);
+       transform: translateX(10%);
     }
     .noiseCointainer{
         height: 40vh;
-        transform: translateX(-7%);
+        transform: translateX(-10%);
     }
     .drumsCointainer{
         height: 40vh;
-        transform: translateX(7%);
+        transform: translateX(10%);
     }
     .samplesCointainer{
         height: 40vh;
-        transform: translateX(-7%);
+        transform: translateX(-10%);
     }
   
     .scrollContainer{
         height:90%;
         margin-top: 2%;
         overflow: scroll;
+    }
+    .roofer{
+        margin-top: 2%;
     }
 </style>
