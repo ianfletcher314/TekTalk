@@ -6,6 +6,19 @@
     </div>
 
 </div> --}}
-<a href="/post/{{id}}" id="dashboardPostName" class="col s10 offset-s1 card-panel green shadow btnbtn2">
+<a href="/post/{{id}}" id="dashboardPostName" class="col s10 offset-s1 card-panel green shadow btnbtn2 singlePost">
     {{post_title}}
 </a>
+<style type="text/css">
+    .btnbtn2 {
+
+        transition: transform 250ms !important;
+    }
+    .btnbtn2:hover {
+        transform: translateY(-5px) !important;
+    }
+    .singlePost{
+        color: black
+    }
+
+</style>
