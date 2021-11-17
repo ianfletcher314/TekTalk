@@ -16,7 +16,7 @@
 
     </div>
     <div id="dashSoundsContainer" class="col s7 push-s1 card-panel grey darken-2 rounder no-margin">
-        <div class="col s10 offset-s1 card-panel green firstLink shadow btnbtn2">sound
+        {{!-- <div class="col s10 offset-s1 card-panel green firstLink shadow btnbtn2">sound
         </div>
         <div class="col s10 offset-s1 card-panel green shadow btnbtn2">sound
         </div>
@@ -37,7 +37,11 @@
         <div class="col s10 offset-s1 card-panel green shadow btnbtn2">sound
         </div>
         <div class="col s10 offset-s1 card-panel green shadow btnbtn2">sound
-        </div>
+        </div> --}}
+        <a href="/post/{{id}}" id="dashboardPostName"
+            class="col s10 offset-s1 card-panel green accent-3 shadow btnbtn2 singlePost">
+            {{post_title}}
+        </a>
        
     </div>
 </div>
