@@ -16,14 +16,15 @@
 
     </div>
     <div id="dashSoundsContainer" class="col s7 push-s1 card-panel grey darken-2 rounder no-margin">
-        
-        {{#each post as |post|}}
-        {{>singlepost}}
-        {{/each}}
+        <div class="firstLink">
+            {{#each post as |post|}}
+            {{>singlepost}}
+            {{/each}}
+        </div>
 
 
     </div>
- <div class="firstLink"></div>
+
 </div>
 {{!-- ------------------------------------THIS IS WHERE THE CSS IS ------------------------------------------ --}}
 <style type="text/css">
@@ -34,7 +35,7 @@
     }
 
     .firstLink {
-        margin-top: 5%
+        margin-top: 3%
     }
 
     .bgcolor {
