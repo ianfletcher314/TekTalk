@@ -1,7 +1,7 @@
 <div class="row card-panel bgcolor height">
     <div id="dashLinksContainer" class="col s3 card-panel grey lighten-2 rounder no-margin">
         <div id="homePhoto" class="col s8 push-s2 rounder">
-        {{!-- this is the photo --}}
+            {{!-- this is the photo --}}
         </div>
 
         <div class="col s12 center dashLink firstLink btnbtn2">LOOPS</div>
@@ -16,60 +16,46 @@
 
     </div>
     <div id="dashSoundsContainer" class="col s7 push-s1 card-panel grey darken-2 rounder no-margin">
-        {{!-- <div class="col s10 offset-s1 card-panel green firstLink shadow btnbtn2">sound
-        </div>
-        <div class="col s10 offset-s1 card-panel green shadow btnbtn2">sound
-        </div>
-        <div class="col s10 offset-s1 card-panel green shadow btnbtn2">sound
-        </div>
-        <div class="col s10 offset-s1 card-panel green shadow btnbtn2">sound
-        </div>
-        <div class="col s10 offset-s1 card-panel green shadow btnbtn2">sound
-        </div>
-        <div class="col s10 offset-s1 card-panel green shadow btnbtn2">sound
-        </div>
-        <div class="col s10 offset-s1 card-panel green shadow btnbtn2">sound
-        </div>
-        <div class="col s10 offset-s1 card-panel green shadow btnbtn2">sound
-        </div>
-        <div class="col s10 offset-s1 card-panel green shadow btnbtn2">sound
-        </div>
-        <div class="col s10 offset-s1 card-panel green shadow btnbtn2">sound
-        </div>
-        <div class="col s10 offset-s1 card-panel green shadow btnbtn2">sound
-        </div> --}}
-        <a href="/post/{{id}}" id="dashboardPostName"
-            class="col s10 offset-s1 card-panel green accent-3 shadow btnbtn2 singlePost">
-            {{post_title}}
-        </a>
-       
+        
+        {{#each post as |post|}}
+        {{>singlepost}}
+        {{/each}}
+
+
     </div>
+ <div class="firstLink"></div>
 </div>
 {{!-- ------------------------------------THIS IS WHERE THE CSS IS ------------------------------------------ --}}
 <style type="text/css">
-    .dashLink{
-        color:black;
-        margin-top:2%;
+    .dashLink {
+        color: black;
+        margin-top: 2%;
         text-shadow: 1px 1px 1px grey
     }
-    .firstLink{
-        margin-top:5%
+
+    .firstLink {
+        margin-top: 5%
     }
-    .bgcolor{
+
+    .bgcolor {
         background-color: #212121
     }
-    .rounder{
+
+    .rounder {
         border-radius: 4%;
     }
-    .no-margin{
+
+    .no-margin {
         margin-top: 0%;
         margin-bottom: 0%;
         margin-right: 0%;
-        margin-left:0%;  
+        margin-left: 0%;
     }
-    .shadow{
+
+    .shadow {
         box-shadow: 2px 2px 1px black;
     }
+
     .btnbtn2 {
 
         transition: transform 250ms !important;
@@ -79,42 +65,38 @@
         transform: translateY(-5px) !important;
     }
 
-    #dashSoundsContainer{
-        height:90%;
+    #dashSoundsContainer {
+        height: 90%;
         transform: translateX(3%);
     }
 
-    #homePhoto{
+    #homePhoto {
         background-image: url("https://images.squarespace-cdn.com/content/v1/55954d27e4b01f9a920cf282/1615988901607-CZCQFVT6FHO6PDE6LQM4/Ben+Dorenfeld.jpg?format=500w");
         background-repeat: no-repeat;
         background-size: 200px 200px;
         border-style: solid;
         border-color: black;
         border-width: .5px;
-        height:40%;
-        margin-top:5%;
+        height: 40%;
+        margin-top: 5%;
         box-shadow: 1px 1px 5px grey;
-      
+
     }
 
-    #dashLinksContainer{
-        height:75%;
+    #dashLinksContainer {
+        height: 75%;
         transform: translateX(15%);
 
 
     }
 
-    #bioPara{
-        color:white;
-        margin-top:5%;
-        font-size:14px;
+    #bioPara {
+        color: white;
+        margin-top: 5%;
+        font-size: 14px;
         box-shadow: 2px 2px 5px grey;
-        
-    };
 
-  
+    }
 
+    ;
 </style>
-
-
-
