@@ -5,10 +5,10 @@
             SOUNDS
         </h3> --}}
         <div class="loopsContainer col s5 grey darken-2 ">
-            <div class="card-panel blue z">
-                
+            <div class=" card-panel blue z">
+                label
             </div>
-            <div class="card-panel white scrollContainer">
+            <div class="card-panel white scrollContainer q">
             {{#each post as |post|}}
             {{>singlepost}}
             {{/each}}
@@ -75,7 +75,11 @@
         margin-top: 2%;
     }
     .z{
+        z-index: 4;
+        transform:translateX(-50%);
+        width: 20%;
+    }
+    .q{
         z-index: 1;
-        transform:translateX(-10%)
     }
 </style>
