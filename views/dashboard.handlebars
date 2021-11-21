@@ -5,6 +5,9 @@
             SOUNDS
         </h3> --}}
         <div class="loopsContainer col s5 grey darken-2 ">
+            <div class="card-panel blue z">
+                
+            </div>
             <div class="card-panel white scrollContainer">
             {{#each post as |post|}}
             {{>singlepost}}
@@ -70,5 +73,9 @@
     }
     .roofer{
         margin-top: 2%;
+    }
+    .z{
+        z-index: 1;
+        transform:translateX(-10%)
     }
 </style>
