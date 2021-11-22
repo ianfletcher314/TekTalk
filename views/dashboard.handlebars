@@ -5,10 +5,10 @@
             SOUNDS
         </h3> --}}
         <div class="loopsContainer col s5 grey darken-2 ">
-            <div class=" card-panel grey lighten-3 z logofont valign-wrapper">
+            <div class=" card-panel grey lighten-3 z logofont valign-wrapper round">
                <b>LOOPS</b>
             </div>
-            <div class="card-panel white scrollContainer q">
+            <div class="card-panel white scrollContainer ">
             {{#each post as |post|}}
             {{>singlepost}}
             {{/each}}
@@ -16,7 +16,7 @@
            
         </div>
         <div class="noiseCointainer col s5 offset-s2 green accent-3">
-             <div class=" card-panel grey lighten-3 z logofont valign-wrapper">
+             <div class=" card-panel grey lighten-3 z logofont valign-wrapper round">
                <b>NOISE</b>
             </div>
           <div class="card-panel white scrollContainer">
@@ -27,7 +27,7 @@
            
         </div>
         <div class="drumsCointainer col s5 green accent-3 roofer">
-             <div class=" card-panel grey lighten-3 z logofont valign-wrapper">
+             <div class=" card-panel grey lighten-3 z logofont valign-wrapper round">
                <b>DRUMS</b>
             </div>
             <div class="card-panel white scrollContainer">
@@ -38,7 +38,7 @@
            
         </div>
         <div class="samplesCointainer col s5 offset-s2 grey darken-2  roofer">
-             <div class=" card-panel grey lighten-3 z logofont valign-wrapper">
+             <div class=" card-panel grey lighten-3 z logofont valign-wrapper round">
                <b>SAMPLES</b>
             </div>
             <div class="card-panel white scrollContainer">
@@ -91,10 +91,6 @@
         position: absolute;
         justify-content: center;
         text-align: center;
-    }
-    .q{
-        z-index: 1;
-        position: absolute;
     }
     
 </style>
