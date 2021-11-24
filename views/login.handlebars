@@ -1,45 +1,41 @@
 <!-- this is the template for the login -->
-{{!-- this works --}}
+{{! this works }}
 <div id="flow-text" class="center card-panel">
-    <h4 id="flow-text" class="white-text center card-panel cyan accent-3">
-        Login
-    </h4>
+  <h4 id="flow-text" class="white-text center card-panel cyan accent-3">
+    Login
+  </h4>
 
-    <div class="row ">
-        <form class="col s12">
-            <div class="row">
-                <div class="active input-field col s6">
-                    <input id="email" type="text" data-length="20">
-                    <label class="active" for="input_text">email</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="active input-field col s6 ">
-                    <input id="password" type="password" data-length="20">
-                    <label class="active" for="input_text">password</label>
-                </div>
-            </div>
-            <a id="loginSubmitBtn" class="waves-effect waves-teal btn-flat btnbtn">
-                Log In
-            </a>
-            <a href="/signup" id="goToSignUpBtn" class="waves-effect waves-teal btn-flat btnbtn">
-                Sign Up Instead
-            </a>
-        </form>
-    </div>
-    <script src='loginScript.js'></script>
-        <style type="text/css">
-            .btnbtn {
-                /*
-      All of the base styles have
-      moved to the “CSS” tab above.
-    */
-                transition: transform 250ms !important;
-            }
-
-            .btnbtn:hover {
-                transform: translateY(-10px) !important;
-            }
-        </style>
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="active input-field col s6">
+          <input id="email" type="text" data-length="20" />
+          <label class="active" for="input_text">email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="active input-field col s6">
+          <input id="password" type="password" data-length="20" />
+          <label class="active" for="input_text">password</label>
+        </div>
+      </div>
+      <a id="loginSubmitBtn" class="waves-effect waves-teal btn-flat btnbtn">
+        Log In
+      </a>
+      <a
+        href="/signup"
+        id="goToSignUpBtn"
+        class="waves-effect waves-teal btn-flat btnbtn"
+      >
+        Sign Up Instead
+      </a>
+    </form>
+  </div>
+  <script src="loginScript.js"></script>
+  <style type="text/css">
+    .btnbtn { /* All of the base styles have moved to the “CSS” tab above. */
+    transition: transform 250ms !important; } .btnbtn:hover { transform:
+    translateY(-10px) !important; }
+  </style>
 
 </div>
