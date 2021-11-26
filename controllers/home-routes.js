@@ -1,38 +1,36 @@
-const router = require('express').Router();
-const { Post, User, Comment } = require('../models');
+const router = require("express").Router();
+const { Post, User, Comment } = require("../models");
 
 // HOME PAGE GET ROUTE: route to view the home page ----------------------------------------------------------------
-router.get('/', async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const dbPostData = await Post.findAll({
       include: [
         {
           model: User,
-          attributes: ['username'],
+          attributes: ["username"],
         },
       ],
     });
 
-    const post = dbPostData.map((post) =>
-      post.get({ plain: true }),
-    );
+    const post = dbPostData.map((post) => post.get({ plain: true }));
     // console.log(post)
 
     const dbCommentData = await Comment.findAll({
       include: [
         {
           model: Post,
-          attributes: ['id'],
+          attributes: ["id"],
         },
       ],
     });
 
     const comment = dbCommentData.map((comment) =>
-      comment.get({ plain: true }),
+      comment.get({ plain: true })
     );
-   
-    console.log("this is req.session!!",req.session)
-    res.render('home', {
+
+    console.log("this is req.session!!", req.session);
+    res.render("home", {
       post,
       comment,
       loggedIn: req.session.loggedIn,
@@ -41,48 +39,46 @@ router.get('/', async (req, res) => {
     console.log(err);
     res.status(500).json(err);
   }
-})
+});
 
 // INDIVIDUAL POST GET ROUTE: route to view an individual post  -----------------------------------------------------------------------------------
-router.get('/post/:id', async (req, res) => {
-  console.log(req.params.id, "id")
+router.get("/post/:id", async (req, res) => {
+  console.log(req.params.id, "id");
   try {
     const postsData = await Post.findByPk(req.params.id, {
       include: [
         {
           model: User,
-          attributes: ['username']
+          attributes: ["username"],
         },
         {
           model: Comment,
-          attributes: ['comment_text']
-        }
-      ]
+          attributes: ["comment_text"],
+        },
+      ],
     });
 
-
     const post = postsData.get({ plain: true });
-    console.log(post)
+    console.log(post);
 
-    res.render('PostMain', {
-      ...post, loggedIn:req.session.loggedIn
-      
-    })
+    res.render("PostMain", {
+      ...post,
+      loggedIn: req.session.loggedIn,
+    });
   } catch (err) {
-    res.status(500).json(err)
-    console.log("big ooops")
+    res.status(500).json(err);
+    console.log("big ooops");
   }
-
 });
 
 //SINGLE COMMENT GET ROUTE :  route to view single comment ----------------------------------------------
-router.get('/comment/:id', async (req, res) => {
-  console.log(req.params.id, "id")
+router.get("/comment/:id", async (req, res) => {
+  console.log(req.params.id, "id");
   try {
     const commentData = await Comment.findByPk(req.params.id, {
       // include: [
       //   {
-      //     model: User, 
+      //     model: User,
       //     attributes: ['username']
       //   },
       // ]
@@ -90,49 +86,47 @@ router.get('/comment/:id', async (req, res) => {
 
     const comment = commentData.get({ plain: true });
 
-    res.render('CommentMain', {
+    res.render("CommentMain", {
       ...comment,
-      // ...comment // logged_in: req.session.logged_in 
-    })
+      // ...comment // logged_in: req.session.logged_in
+    });
   } catch (err) {
-    res.status(500).json(err)
-    console.log("big ooops")
+    res.status(500).json(err);
+    console.log("big ooops");
   }
-  console.log(postsData)
+  console.log(postsData);
 });
 
 // DASHBOARD GET ROUTE: route to view the dashboard view -----------------------------------------------------
-router.get('/dashboard', async (req, res) => {
+router.get("/dashboard", async (req, res) => {
   try {
     const dbPostData = await Post.findAll({
       include: [
         {
           model: User,
-          attributes: ['username'],
+          attributes: ["username"],
         },
       ],
     });
 
-    const post = dbPostData.map((post) =>
-      post.get({ plain: true }),
-    );
+    const post = dbPostData.map((post) => post.get({ plain: true }));
     // console.log(post)
 
     const dbCommentData = await Comment.findAll({
       include: [
         {
           model: Post,
-          attributes: ['id'],
+          attributes: ["id"],
         },
       ],
     });
 
     const comment = dbCommentData.map((comment) =>
-      comment.get({ plain: true }),
+      comment.get({ plain: true })
     );
-   
-    console.log("this is req.session!!",req.session)
-    res.render('dashboard', {
+
+    console.log("this is req.session!!", req.session);
+    res.render("dashboard", {
       post,
       comment,
       loggedIn: req.session.loggedIn,
@@ -141,22 +135,21 @@ router.get('/dashboard', async (req, res) => {
     console.log(err);
     res.status(500).json(err);
   }
-})
+});
 
 // NEW SOUND POST ROUTE: route for submit new post button---------------------------------------------------------------
-router.post('/submit/post', async (req, res) => {
-  console.log("in router.post")
+router.post("/submit/post", async (req, res) => {
+  console.log("in router.post");
   try {
     const dbUserData = await Post.create({
       post_title: req.body.title,
       post_text: req.body.text,
       user_id: req.body.user_id,
-
     });
-    console.log(dbUserData, "this is dbUserData")
+    console.log(dbUserData, "this is dbUserData");
 
     if (dbUserData.ok) {
-      document.location.replace('/')
+      document.location.replace("/");
     }
 
     // req.session.save(() => {
@@ -171,18 +164,17 @@ router.post('/submit/post', async (req, res) => {
 });
 
 // NEW COMMENT POST ROUTE:route for submit new comment button-------------------------------------------------------
-router.post('/submit/comment', async (req, res) => {
-  console.log("in router.post")
+router.post("/submit/comment", async (req, res) => {
+  console.log("in router.post");
   try {
     const dbUserData = await Comment.create({
       comment_text: req.body.text,
       post_id: req.body.post_id,
-
     });
-    console.log(dbUserData, "this is dbUserData")
+    console.log(dbUserData, "this is dbUserData");
 
     if (dbUserData.ok) {
-      document.location.replace('/')
+      document.location.replace("/");
     }
 
     // req.session.save(() => {
@@ -196,12 +188,10 @@ router.post('/submit/comment', async (req, res) => {
   }
 });
 // NEW POST GET ROUTE : route to get the new post page ----------------------------------------------------
-router.get('/newpost', (req, res) => {
-  res.render('newpost', {loggedIn:req.session.loggedIn})
-  console.log("newPost WOrking")
-})
-
-
+router.get("/newpost", (req, res) => {
+  res.render("newpost", { loggedIn: req.session.loggedIn });
+  console.log("newPost WOrking");
+});
 
 // routes to basic home pages-----------------------------------------------------------------------------------
 
@@ -226,23 +216,21 @@ router.get('/newpost', (req, res) => {
 //   res.render('created')
 // })
 
-
 // THis section should be in the api/user routes however I am leaving it so I can check which one is in use
 
 // NEW UESER POST ROUTE: route to Create New User---------------------------------------------------------------
-router.post('/create-user', async (req, res) => {
-  console.log("in router.post")
+router.post("/create-user", async (req, res) => {
+  console.log("in router.post");
   try {
     const dbUserData = await User.create({
       username: req.body.username,
       email: req.body.email,
       password: req.body.password,
-
     });
-    console.log(dbUserData)
+    console.log(dbUserData);
 
     if (dbUserData.ok) {
-      document.location.replace('/')
+      document.location.replace("/");
     }
 
     req.session.save(() => {
@@ -257,7 +245,7 @@ router.post('/create-user', async (req, res) => {
   }
 });
 // LOGIN POST ROUTE: route to Login---------------------------------------------------------------
-router.post('/loginSubmit', async (req, res) => {
+router.post("/loginSubmit", async (req, res) => {
   try {
     const dbUserData = await User.findOne({
       where: {
@@ -268,7 +256,7 @@ router.post('/loginSubmit', async (req, res) => {
     if (!dbUserData) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password. Please try again!' });
+        .json({ message: "Incorrect email or password. Please try again!" });
       return;
     }
 
@@ -277,17 +265,17 @@ router.post('/loginSubmit', async (req, res) => {
     if (!validPassword) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password. Please try again!' });
+        .json({ message: "Incorrect email or password. Please try again!" });
       return;
     }
 
     req.session.save(() => {
       req.session.loggedIn = true;
-      console.log(req.session.loggedIn, "You are loggd in")
+      console.log(req.session.loggedIn, "You are loggd in");
 
       res
         .status(200)
-        .json({ user: dbUserData, message: 'You are now logged in!' });
+        .json({ user: dbUserData, message: "You are now logged in!" });
     });
   } catch (err) {
     console.log(err);
@@ -295,8 +283,8 @@ router.post('/loginSubmit', async (req, res) => {
   }
 });
 
- // LOGOUT POST ROUTE: route to logout ---------------------------------------------------------------
-router.post('/logout', (req, res) => {
+// LOGOUT POST ROUTE: route to logout ---------------------------------------------------------------
+router.post("/logout", (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
