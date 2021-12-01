@@ -1,13 +1,15 @@
 <div class="row card-panel bgcolor height">
+    {{!-- this is the section with the photo and links -------------------------- --}}
     <div id="dashLinksContainer" class="col s3 card-panel grey lighten-2 rounder no-margin">
         <div id="homePhoto" class="col s8 push-s2 rounder">
             {{!-- this is the photo --}}
         </div>
-
+    {{!-- links for different types of samples  -------------------------------------}}
         <div class="col s12 center dashLink firstLink btnbtn2">LOOPS</div>
         <div class="col s12 center dashLink btnbtn2">SAMPLES</div>
         <div class="col s12 center dashLink btnbtn2">DRUMS</div>
         <div class="col s12 center dashLink btnbtn2">NOISE</div>
+    {{!-- this is the description of the artist ---------------------------------- --}}
         <div class="col s12 center ">
             <div id="bioPara" class="col s8 push-s2 grey rounder">
                 Ian Fletcher is a Producer/Engineer from St. Louis Missouri specializing in hip-hop and indie-rock
@@ -15,6 +17,7 @@
         </div>
 
     </div>
+    {{!-- this is the section that inports posts and displays the min a dash like scroll box --}}
     <div id="dashSoundsContainer" class="col s7 push-s1 card-panel grey darken-2 rounder no-margin">
         <div class="firstLink">
             {{#each post as |post|}}
